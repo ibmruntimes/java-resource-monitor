@@ -161,6 +161,7 @@ public class JavaResourceMonitor {
 		Thread monitorThread = null;
 		try {
 			monitorThread = new Thread(new ThreadMonitor(mbean, frequency, duration));
+			monitorThread.setDaemon(true);
 			monitorThread.start();
 		} catch (Exception e) {
 			e.printStackTrace();
